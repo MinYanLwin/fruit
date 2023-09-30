@@ -1,0 +1,21 @@
+
+{% extends "myapp/base.html" %}
+{% load static %}
+{% block title %}
+
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">    
+{% endblock style %}
+
+{% block content %}
+    <ul>
+        {% for fruit in fruits %}
+            <a href='{{fruit.get_absolute_url}}'>
+                <li>{{fruit.name}} is {{fruit.price}}</li>
+            </a>
+    
+        {% endfor %}
+    </ul>
+{% endblock content %}
